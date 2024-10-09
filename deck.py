@@ -29,7 +29,7 @@ class Deck:
                 shuffled_deck.extend(half1)
                 half1 = []
                 break
-            if random() > .5 + (randint(-100, 100)/1000):
+            if random() > .5 + (randint(-100, 100)/1000): # add some degree of bias so that the deck is not perfectly random
                 shuffled_deck.append(half1.pop(0))
             else:
                 shuffled_deck.append(half2.pop(0))

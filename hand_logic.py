@@ -9,7 +9,15 @@ def hasRoyalFlush(hand):
     return False
 
 def hasStraightFlush(hand):
-    pass
+    card_suits = [card.suit for card in hand]
+    for suit in set(card_suits): # only check each suit once
+        card_ranks = [card.rank for card in hand if card.suit == suit]
+        if 14 in card_ranks: card_ranks.append(1) # account for high/low ace
+        card_ranks.sort()
+        for i in range(len(card_ranks)-4):
+            if card_ranks[i] == card_ranks[i+1]-1 == card_ranks[i+2]-2 == card_ranks[i+3]-3 == card_ranks[i+4]-4:
+                return True
+    return False
 
 def hasFourOfAKind(hand):
     card_ranks = [card.rank for card in hand]

@@ -4,7 +4,7 @@ from card import Card
 
 def hasRoyalFlush(hand):
     for suit in ['diamonds', 'hearts', 'clubs', 'spades']:
-        if Card(14, suit) in hand and Card(13, suit) in hand and Card(12, suit) in hand and Card(11, suit) in hand and Card(10, suit) in hand:
+        if all(card.rank in [10, 11, 12, 13, 14] for card in hand if card.suit == suit):
             return True
     return False
 

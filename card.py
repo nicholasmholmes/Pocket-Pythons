@@ -14,8 +14,9 @@ class Card:
             return f"King of {self.suit}"
         return f"{self.rank} of {self.suit}"
     
+    # comparison operators for sorting and comparing high cards
     def __eq__(self, other):
-        return self.rank == other.rank and self.suit == other.suit
+        return self.rank == other.rank
     
     def __lt__(self, other):
         return self.rank < other.rank

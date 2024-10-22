@@ -1,3 +1,4 @@
+from player import Player
 class Poker:
     def __init__(self, players):
         self.players = players
